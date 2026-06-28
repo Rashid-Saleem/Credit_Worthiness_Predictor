@@ -17,10 +17,11 @@ app = FastAPI()
 #Temporarily added below middleware for testing 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://credit-worthiness-predictor.vercel.app/"],   # Temporary for testing
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
+
 )
 
 
