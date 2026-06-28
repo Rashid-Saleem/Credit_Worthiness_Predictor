@@ -7,13 +7,22 @@ import joblib
 app = FastAPI()
 
 # Configure CORS so your Next.js frontend (running on port 3000) can talk to your backend
+# app.add_middleware(
+#     CORSMiddleware,
+#     allow_origins=["http://localhost:3000"],
+#     allow_credentials=True,
+#     allow_methods=["*"],
+#     allow_headers=["*"],
+# )
+#Temporarily added below middleware for testing 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=["*"],   # Temporary for testing
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 # Load your best model
 model = joblib.load("rf_model.joblib")
